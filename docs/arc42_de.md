@@ -1,152 +1,55 @@
-**Über arc42**
-
-arc42, das Template zur Dokumentation von Software- und
-Systemarchitekturen.
-
-Erstellt von Dr. Gernot Starke, Dr. Peter Hruschka und Mitwirkenden.
-
-Template Revision: 7.0 DE (asciidoc-based), January 2017
-
-© We acknowledge that this document uses material from the arc42
-architecture template, <http://www.arc42.de>. Created by Dr. Peter
-Hruschka & Dr. Gernot Starke.
-
-> **Note**
->
-> Diese Version des Templates enthält Hilfen und Erläuterungen. Sie
-> dient der Einarbeitung in arc42 sowie dem Verständnis der Konzepte.
-> Für die Dokumentation eigener System verwenden Sie besser die *plain*
-> Version.
-
 Einführung und Ziele {#section-introduction-and-goals}
 ====================
-
-Beschreibt die wesentlichen Anforderungen und treibenden Kräfte, die bei
-der Umsetzung der Softwarearchitektur und Entwicklung des Systems
-berücksichtigt werden müssen.
-
-Dazu gehören:
-
--   zugrunde liegende Geschäftsziele,
-
--   wesentliche Aufgabenstellungen und
-
--   essenzielle fachliche Anforderungen an das System sowie
-
--   Qualitätsziele für die Architektur und
-
--   relevante Stakeholder und deren Erwartungshaltung.
 
 Aufgabenstellung {#_aufgabenstellung}
 ----------------
 
-**Inhalt.**
+Das *Piece of cake* Orderverteilungssystem (PocO) nimmt Back- und SÜßwaren Bestellungen entgegen und verteilt diese optimal auf die einzelnen Bäckerein.
+Folgende Faktoren werden hierzu beachtet:
 
-Kurzbeschreibung der fachlichen Aufgabenstellung, treibenden Kräfte,
-Extrakt (oder Abstract) der Anforderungen. Verweis auf (hoffentlich
-vorliegende) Anforderungsdokumente (mit Versionsbezeichnungen und
-Ablageorten).
+ - wie lange ist die Lieferzeit zum Kunden?
+ - wie lange ist die Warteschlange zur Bearbeitung der Bestellung in der Backerei?
+ - wie lange braucht ein Bäckerei-Standort um die Bestellung zu bearbeiten?
 
-**Motivation.**
+| ID | Anforderung                                                                 | Erklärung                                                                                     |
+|:---|:----------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------|
+| 1  | Möglichst kurze Bearbeitungszeit zwischen Bestellung und Lieferung der Ware | Kernkriterium um im Bäckerei-Versand überhaupt Kundenakzeptanz zu erhalten                    |
+| 2  | Nutzung der eigenen Resourcen                                               | Unsere Filialen müssen möglichst gut ausgelastet werden um kosteneffizient arbeiten zu können |
 
-Aus Sicht der späteren Nutzung ist die Unterstützung einer fachlichen
-Aufgabe oder Verbesserung der Qualität der eigentliche Beweggrund, ein
-neues System zu schaffen oder ein bestehendes zu modifizieren.
-
-**Form.**
-
-Kurze textuelle Beschreibung, eventuell in tabellarischer Use-Case Form.
-Sofern vorhanden, sollte die Aufgabenstellung Verweise auf die
-entsprechenden Anforderungsdokumente enthalten.
-
-Halten Sie diese Auszüge so knapp wie möglich und wägen Sie Lesbarkeit
-und Redundanzfreiheit gegeneinander ab.
 
 Qualitätsziele {#_qualit_tsziele}
---------------
+--------------    
 
-**Inhalt.**
-
-Die Top-3 bis Top-5 der Qualitätsziele für die Architektur, deren
-Erfüllung oder Einhaltung den maßgeblichen Stakeholdern besonders
-wichtig sind. Gemeint sind hier wirklich Qualitätsziele, die nicht
-unbedingt mit den Zielen des Projekts übereinstimmen. Beachten Sie den
-Unterschied.
-
-**Motivation.**
-
-Weil Qualitätsziele grundlegende Architekturentscheidungen oft
-maßgeblich beeinflussen, sollten Sie die für Ihre Stakeholder relevanten
-Qualitätsziele kennen, möglichst konkret und operationalisierbar.
-
-**Form.**
-
-Tabellarische Darstellung der Qualitätsziele mit möglichst konkreten
-Szenarien, geordnet nach Prioritäten.
+| ID | Qualitätsziel | Beschreibung                                                                                                                  |
+|:---|:--------------|:------------------------------------------------------------------------------------------------------------------------------|
+| 1  | Wartbarkeit   | Das System ist für einen sehr langfristigen Einsatz von > 10 Jahren vorgesehen. Fixes müssen in wenigen Minuten möglich sein. |
+| 2  | Verfügbarkeit | Durch die weltweiten Filialen muss auch die Anwendung immer verfügbar sein                                                    |
+| 3  | Performance   | Die Verteilung einer Order muss innerhalb einer Minute stattfinden                                                            |
 
 Stakeholder {#_stakeholder}
 -----------
 
-**Inhalt.**
 
-Expliziter Überblick über die Stakeholder des Systems -- über alle
-Personen, Rollen oder Organisationen --, die
+|Rolle|Kontakt|Erwartungshaltung|
+|:---|:------------|:----------|
+|Entwickler|das Entwicklungsteam|Schneller Überblick über das System, gemeinsames Verständnis, als Diskussionsvorlagen für Erweiterungen|
+|Backup-Entwickler|www.hireandfire.com|Will sich schnell über den Zweck und Aufbau des Systems informieren|
+|Unternehmemnsweiter Systemarchitekt|Arno Architekt|Will beurteilen, ob das System in die Systemlandschaft des Unternehmes passt|
+|Datenschutzbeauftragter|...|...|
 
--   die Architektur kennen sollten oder
-
--   von der Architektur überzeugt werden müssen,
-
--   mit der Architektur oder dem Code arbeiten (z.B. Schnittstellen
-    nutzen),
-
--   die Dokumentation der Architektur für ihre eigene Arbeit benötigen,
-
--   Entscheidungen über das System und dessen Entwicklung treffen.
-
-**Motivation.**
-
-Sie sollten die Projektbeteiligten und -betroffenen kennen, sonst
-erleben Sie später im Entwicklungsprozess Überraschungen. Diese
-Stakeholder bestimmen unter anderem Umfang und Detaillierungsgrad der
-von Ihnen zu leistenden Arbeit und Ergebnisse.
-
-**Form.**
-
-Tabelle mit Rollen- oder Personennamen, sowie deren Erwartungshaltung
-bezüglich der Architektur und deren Dokumentation.
-
-+-----------------+-----------------+-----------------------------------+
-| Rolle           | Kontakt         | Erwartungshaltung                 |
-+=================+=================+===================================+
-| *\<Rolle-1\>*   | *\<Kontakt-1\>* | *\<Erwartung-1\>*                 |
-+-----------------+-----------------+-----------------------------------+
-| *\<Rolle-2\>*   | *\<Kontakt-2\>* | *\<Erwartung-2\>*                 |
-+-----------------+-----------------+-----------------------------------+
 
 Randbedingungen {#section-architecture-constraints}
 ===============
 
-**Inhalt.**
+| ID | Beschreibung                                                                                 |
+|:---|:---------------------------------------------------------------------------------------------|
+| 1  | PocO muss in Java entwickelt werden                                                          |
+| 2  | PocO muss mit Maven als Build-Werkzeug funktionieren                                         |
+| 3  | Code und Dokumentation muss auf Github gehostet werden                                       |
+| 4  | Die erste Version muss spätestens Ende März lokal auf einem Entwicklerrechner lauffähig sein |
 
-Randbedingungen und Vorgaben, die ihre Freiheiten bezüglich Entwurf,
-Implementierung oder Ihres Entwicklungsprozesses einschränken. Diese
-Randbedingungen gelten manchmal organisations- oder firmenweit über die
-Grenzen einzelner Systeme hinweg.
 
-**Motivation.**
 
-Für eine tragfähige Architektur sollten Sie genau wissen, wo Ihre
-Freiheitsgrade bezüglich der Entwurfsentscheidungen liegen und wo Sie
-Randbedingungen beachten müssen. Sie können Randbedingungen vielleicht
-noch verhandeln, zunächst sind sie aber da.
-
-**Form.**
-
-Einfache Tabellen der Randbedingungen mit Erläuterungen. Bei Bedarf
-unterscheiden Sie technische, organisatorische und politische
-Randbedingungen oder übergreifende Konventionen (beispielsweise
-Programmier- oder Versionierungsrichtlinien, Dokumentations- oder
-Namenskonvention).
 
 Kontextabgrenzung {#section-system-scope-and-context}
 =================
