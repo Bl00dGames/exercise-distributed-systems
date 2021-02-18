@@ -6,8 +6,8 @@ So you start having the bakery called "Piece of cake" and one chef. <br>
 After some time it comes to the point that one chef can't handle all the orders of the customers.
 
 **QUESTION 1** How do you handle more orders? <br>
-`Ask the chef to work harder, pay him more and his output will rise.`
-> _Vertical scaling_: optimise processes and increase throughput the same resources. <br>
+`Ask the chef to optimize his processes. Ask him to work harder, pay him more and his output will rise.`
+> _Vertical scaling_: optimize processes and increase throughput with the same resources. <br>
 > Preprocessing & Cron jobs: Prepare beforehand at non-peak hours (let's say around 5 a.m.)
 
 Now our business is set up. Great!
@@ -115,7 +115,7 @@ If you send it to bakery 2 it might take
 - 40 min to deliver from bakery 2 to the customer<br>
 = Total of 1:40 hours.
 
-So the "Central Place" should route abviously to bakery 2. 
+So the "Central Place" should route obviously to bakery 2. 
 In terms of business decisions more effective routing leads to more money.
 
 If there's a central place that routes in a smart way, this is called ...

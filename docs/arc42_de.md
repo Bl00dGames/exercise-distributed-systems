@@ -4,7 +4,7 @@ Einführung und Ziele {#section-introduction-and-goals}
 Aufgabenstellung {#_aufgabenstellung}
 ----------------
 
-Das *Piece of cake* Orderverteilungssystem (PocO) nimmt Back- und SÜßwaren Bestellungen entgegen und verteilt diese optimal auf die einzelnen Bäckerein.
+Das *Piece of cake* Orderverteilungssystem (PocO) nimmt Back- und Süßwaren Bestellungen entgegen und verteilt diese optimal auf die einzelnen Bäckerein.
 Folgende Faktoren werden hierzu beachtet:
 
  - wie lange ist die Lieferzeit zum Kunden?
@@ -17,7 +17,7 @@ Folgende Faktoren werden hierzu beachtet:
 | 2  | Nutzung der eigenen Resourcen                                               | Unsere Filialen müssen möglichst gut ausgelastet werden um kosteneffizient arbeiten zu können |
 
 
-Qualitätsziele {#_qualit_tsziele}
+Qualitätsziele {#_qualitaetsziele}
 --------------    
 
 | ID | Qualitätsziel | Beschreibung                                                                                                                  |
@@ -819,10 +819,9 @@ Sie sollten relevante Begriffe klar definieren, so dass alle Beteiligten
 
 -   Eventuell weitere Spalten mit Übersetzungen, falls notwendig.
 
-+-----------------------+-----------------------------------------------+
-| Begriff               | Definition                                    |
-+=======================+===============================================+
-| *\<Begriff-1\>*       | *\<Definition-1\>*                            |
-+-----------------------+-----------------------------------------------+
-| *\<Begriff-2*         | *\<Definition-2\>*                            |
-+-----------------------+-----------------------------------------------+
+| Begriff | Definition                                                                                 |
+|:---|:------------------------------------------------------------------------------------------------|
+| *\<Begriff-1\>*  | *\<Definition-1\>*                                                                |
+| *\<Begriff-2*    | *\<Definition-2\>*                                                                |
+
+
